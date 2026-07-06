@@ -1,0 +1,701 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Lulu's Dose of Beauty — Skincare Coaching &amp; Custom Art</title>
+<meta name="description" content="Lulu's Dose of Beauty — personalized skincare consultations and custom art commissions by Lutfiya Rawat. Also an author — see published books below.">
+<meta property="og:title" content="Lulu's Dose of Beauty — Skincare Coaching &amp; Custom Art">
+<meta property="og:description" content="Personalized skincare consultations and custom art commissions, made for you.">
+<meta property="og:type" content="website">
+<meta property="og:image" content="images/lutfiya-portrait.jpg">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ccircle cx='38' cy='42' r='30' fill='%237E9C82' fill-opacity='0.85'/%3E%3Ccircle cx='62' cy='58' r='30' fill='%23E38B76' fill-opacity='0.85'/%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,500;0,9..144,600;1,9..144,500&family=Work+Sans:wght@400;500;600&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --cream: #FAF3EC;
+    --plum: #362034;
+    --sage: #7E9C82;
+    --coral: #E38B76;
+    --gold: #CC9A45;
+    --ink: #2A2226;
+    --line: rgba(54,32,52,0.14);
+  }
+
+  *{ box-sizing: border-box; }
+
+  html{ scroll-behavior: smooth; }
+
+  body{
+    margin:0;
+    background: var(--cream);
+    color: var(--ink);
+    font-family: 'Work Sans', sans-serif;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  h1, h2, h3{
+    font-family: 'Fraunces', serif;
+    color: var(--plum);
+    margin: 0;
+    line-height: 1.05;
+  }
+
+  a{ color: inherit; text-decoration: none; }
+
+  .label{
+    font-family: 'Space Mono', monospace;
+    font-size: 0.72rem;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--sage);
+  }
+
+  .wrap{
+    max-width: 1080px;
+    margin: 0 auto;
+    padding: 0 28px;
+  }
+
+  /* ---------- NAV ---------- */
+  nav{
+    position: sticky;
+    top: 0;
+    z-index: 20;
+    backdrop-filter: blur(8px);
+    background: rgba(250, 243, 236, 0.85);
+    border-bottom: 1px solid var(--line);
+  }
+  nav .wrap{
+    display:flex;
+    align-items:center;
+    justify-content: space-between;
+    height: 72px;
+  }
+  .brand{
+    display:flex;
+    flex-direction:column;
+    line-height:1.15;
+  }
+  .brand .biz-name{
+    font-family:'Fraunces', serif;
+    font-weight: 600;
+    font-size: 1.1rem;
+    color: var(--plum);
+  }
+  .brand .by-name{
+    font-family:'Space Mono', monospace;
+    font-size: 0.62rem;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    color: rgba(54,32,52,0.55);
+  }
+  nav ul{
+    list-style:none;
+    display:flex;
+    gap: 28px;
+    margin:0; padding:0;
+    font-size: 0.92rem;
+  }
+  nav ul li a{
+    position:relative;
+    padding-bottom: 4px;
+  }
+  nav ul li a::after{
+    content:'';
+    position:absolute;
+    left:0; bottom:0;
+    width:0%; height:1.5px;
+    background: var(--coral);
+    transition: width .25s ease;
+  }
+  nav ul li a:hover::after{ width:100%; }
+
+  /* ---------- HERO ---------- */
+  header.hero{
+    padding: 90px 0 70px;
+    overflow: hidden;
+  }
+  .hero-grid{
+    display:grid;
+    grid-template-columns: 1.1fr 0.9fr;
+    gap: 48px;
+    align-items:center;
+  }
+  .hero h1{
+    font-size: clamp(2.4rem, 5vw, 3.6rem);
+    font-weight: 500;
+    letter-spacing: -0.01em;
+  }
+  .hero h1 em{
+    font-style: italic;
+    color: var(--coral);
+    font-weight: 500;
+  }
+  .hero p.sub{
+    margin-top: 20px;
+    font-size: 1.08rem;
+    max-width: 46ch;
+    color: rgba(42,34,38,0.78);
+  }
+  .hero-ctas{
+    margin-top: 32px;
+    display:flex;
+    gap: 14px;
+    flex-wrap: wrap;
+  }
+  .btn{
+    display:inline-flex;
+    align-items:center;
+    gap:8px;
+    padding: 13px 24px;
+    border-radius: 999px;
+    font-size: 0.92rem;
+    font-weight: 600;
+    border: 1.5px solid transparent;
+    cursor:pointer;
+    transition: transform .2s ease, box-shadow .2s ease;
+  }
+  .btn:hover{ transform: translateY(-2px); }
+  .btn-primary{
+    background: var(--plum);
+    color: var(--cream);
+    box-shadow: 0 6px 18px rgba(54,32,52,0.25);
+  }
+  .btn-secondary{
+    border-color: var(--plum);
+    color: var(--plum);
+    background: transparent;
+  }
+
+  /* Signature: overlapping venn of droplet + brushstroke, representing the two crafts merging */
+  .venn{
+    position: relative;
+    width: 100%;
+    aspect-ratio: 1/1;
+    max-width: 380px;
+    margin: 0 auto;
+  }
+  .blob{
+    position:absolute;
+    border-radius: 50%;
+    mix-blend-mode: multiply;
+  }
+  .blob.skin{
+    width: 68%; height: 68%;
+    left: 2%; top: 14%;
+    background: radial-gradient(circle at 35% 30%, #A9C3AB, var(--sage));
+  }
+  .blob.art{
+    width: 68%; height: 68%;
+    right: 2%; bottom: 14%;
+    background: radial-gradient(circle at 65% 65%, #F0AF9C, var(--coral));
+  }
+  .venn .tag{
+    position:absolute;
+    font-family:'Space Mono', monospace;
+    font-size: 0.68rem;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--plum);
+    background: var(--cream);
+    padding: 5px 11px;
+    border-radius: 999px;
+    border: 1px solid var(--line);
+  }
+  .venn .tag.t1{ top: 6%; left: 10%; }
+  .venn .tag.t2{ bottom: 6%; right: 8%; }
+  .venn .tag.t3{
+    top: 50%; left: 50%;
+    transform: translate(-50%,-50%);
+    background: var(--plum);
+    color: var(--cream);
+    border-color: var(--plum);
+  }
+
+  /* ---------- SECTION SHARED ---------- */
+  section{ padding: 84px 0; }
+  section.alt{
+    background: #F2E9DE;
+    border-top: 1px solid var(--line);
+    border-bottom: 1px solid var(--line);
+  }
+  .section-head{ max-width: 620px; margin-bottom: 48px; }
+  .section-head h2{
+    font-size: clamp(1.8rem, 3.2vw, 2.4rem);
+    font-weight: 500;
+    margin-top: 10px;
+  }
+  .section-head p{
+    margin-top: 14px;
+    color: rgba(42,34,38,0.75);
+    font-size: 1.02rem;
+  }
+
+  /* ---------- SERVICES ---------- */
+  .services{
+    display:grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 24px;
+  }
+  .service-card{
+    background: var(--cream);
+    border: 1px solid var(--line);
+    border-radius: 18px;
+    padding: 32px;
+    transition: transform .25s ease, box-shadow .25s ease;
+  }
+  .service-card:hover{
+    transform: translateY(-4px);
+    box-shadow: 0 14px 32px rgba(54,32,52,0.10);
+  }
+  .service-card .icon{
+    width: 42px; height: 42px;
+    border-radius: 12px;
+    display:flex; align-items:center; justify-content:center;
+    font-size: 1.2rem;
+    margin-bottom: 18px;
+  }
+  .service-card.skin .icon{ background: rgba(126,156,130,0.18); }
+  .service-card.art .icon{ background: rgba(227,139,118,0.18); }
+  .service-card h3{ font-size: 1.35rem; font-weight: 500; margin-bottom: 10px; }
+  .service-card p{ color: rgba(42,34,38,0.75); font-size: 0.98rem; margin: 0 0 18px; }
+  .service-card ul{
+    margin:0; padding:0; list-style:none;
+    display:flex; flex-direction:column; gap:9px;
+    font-size: 0.92rem;
+  }
+  .service-card ul li{
+    display:flex; align-items:center; gap:9px;
+    color: var(--ink);
+  }
+  .service-card ul li::before{
+    content:'';
+    width:5px; height:5px;
+    border-radius:50%;
+    background: var(--coral);
+    flex-shrink:0;
+  }
+  .service-card.skin ul li::before{ background: var(--sage); }
+  .service-card .price{
+    margin-top: 22px;
+    padding-top: 18px;
+    border-top: 1px solid var(--line);
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+  }
+  .service-card .price .amount{
+    font-family:'Fraunces', serif;
+    font-size: 1.2rem;
+    color: var(--plum);
+  }
+  .service-card .price .amount small{
+    font-family:'Work Sans', sans-serif;
+    font-size: 0.72rem;
+    font-weight: 500;
+    color: rgba(42,34,38,0.55);
+    display:block;
+    margin-top: 2px;
+  }
+  .pay-btn{
+    display:inline-flex;
+    align-items:center;
+    gap:7px;
+    padding: 10px 18px;
+    border-radius: 999px;
+    font-size: 0.85rem;
+    font-weight: 600;
+    background: var(--plum);
+    color: var(--cream);
+    transition: transform .2s ease, box-shadow .2s ease;
+  }
+  .pay-btn:hover{
+    transform: translateY(-2px);
+    box-shadow: 0 6px 16px rgba(54,32,52,0.25);
+  }
+  .service-card.art .pay-btn{ background: var(--coral); }
+
+  /* ---------- BOOKS ---------- */
+  .books{
+    display:grid;
+    grid-template-columns: repeat(2, minmax(0, 300px));
+    gap: 24px;
+    justify-content: center;
+  }
+  .book-card{
+    background: var(--cream);
+    border: 1px solid var(--line);
+    border-radius: 18px;
+    overflow: hidden;
+    display:flex;
+    flex-direction:column;
+    transition: transform .25s ease, box-shadow .25s ease;
+  }
+  .book-card:hover{
+    transform: translateY(-4px);
+    box-shadow: 0 14px 32px rgba(54,32,52,0.10);
+  }
+  .book-cover{
+    aspect-ratio: 3/4;
+    background:
+      linear-gradient(160deg, rgba(126,156,130,0.35), rgba(227,139,118,0.35)),
+      var(--plum);
+    position: relative;
+    display:flex;
+    align-items:flex-end;
+    padding: 18px;
+  }
+  .book-cover .spine-label{
+    font-family:'Space Mono', monospace;
+    font-size: 0.68rem;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: rgba(250,243,236,0.75);
+  }
+  .book-body{
+    padding: 22px;
+    display:flex;
+    flex-direction:column;
+    gap: 10px;
+    flex:1;
+  }
+  .book-body h3{ font-size: 1.15rem; font-weight: 500; }
+  .book-body p{
+    font-size: 0.9rem;
+    color: rgba(42,34,38,0.72);
+    margin:0;
+    flex:1;
+  }
+  .book-buy{
+    align-self:flex-start;
+    display:inline-flex;
+    align-items:center;
+    gap:7px;
+    margin-top: 8px;
+    padding: 9px 16px;
+    border-radius: 999px;
+    font-size: 0.84rem;
+    font-weight: 600;
+    border: 1.5px solid var(--plum);
+    color: var(--plum);
+    transition: background .2s ease, color .2s ease;
+  }
+  .book-buy:hover{
+    background: var(--plum);
+    color: var(--cream);
+  }
+
+  /* ---------- PORTFOLIO ---------- */
+  .portfolio-grid{
+    display:grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+  }
+  .portfolio-item{
+    position: relative;
+    border-radius: 16px;
+    overflow: hidden;
+    aspect-ratio: 4/5;
+    background: var(--plum);
+  }
+  .portfolio-item img{
+    width:100%;
+    height:100%;
+    object-fit: cover;
+    display:block;
+    transition: transform .4s ease;
+  }
+  .portfolio-item:hover img{
+    transform: scale(1.06);
+  }
+  .portfolio-item .overlay{
+    position:absolute;
+    inset:0;
+    background: linear-gradient(to top, rgba(54,32,52,0.75), transparent 50%);
+    display:flex;
+    align-items:flex-end;
+    padding: 16px;
+    opacity: 0;
+    transition: opacity .3s ease;
+  }
+  .portfolio-item:hover .overlay{ opacity: 1; }
+  .portfolio-item .overlay span{
+    font-family:'Space Mono', monospace;
+    font-size: 0.7rem;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    color: var(--cream);
+  }
+  .portfolio-note{
+    margin-top: 24px;
+    font-size: 0.88rem;
+    color: rgba(42,34,38,0.65);
+  }
+
+  /* ---------- ABOUT ---------- */
+  .about-grid{
+    display:grid;
+    grid-template-columns: 0.8fr 1.2fr;
+    gap: 52px;
+    align-items:start;
+  }
+  .about-portrait{
+    aspect-ratio: 4/5;
+    border-radius: 20px;
+    background: var(--plum);
+    position: relative;
+    overflow:hidden;
+  }
+  .about-text p{
+    font-size: 1.02rem;
+    line-height: 1.7;
+    color: rgba(42,34,38,0.85);
+    margin: 0 0 18px;
+  }
+  .about-text p:first-of-type::first-letter{
+    font-family:'Fraunces', serif;
+    font-size: 3rem;
+    float:left;
+    line-height: 0.8;
+    padding-right: 10px;
+    padding-top: 6px;
+    color: var(--coral);
+  }
+
+  /* ---------- CONTACT ---------- */
+  .contact-box{
+    background: var(--plum);
+    color: var(--cream);
+    border-radius: 24px;
+    padding: 56px;
+    display:grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 40px;
+    align-items:center;
+  }
+  .contact-box h2{ color: var(--cream); font-weight: 500; }
+  .contact-box p{ color: rgba(250,243,236,0.75); margin-top: 12px; }
+  .contact-box .label{ color: var(--gold); }
+  .contact-list{
+    list-style:none; margin: 24px 0 0; padding:0;
+    display:flex; flex-direction:column; gap: 14px;
+  }
+  .contact-list a{
+    display:flex; align-items:center; justify-content:space-between;
+    padding: 14px 18px;
+    border: 1px solid rgba(250,243,236,0.2);
+    border-radius: 12px;
+    font-size: 0.95rem;
+    transition: background .2s ease, border-color .2s ease;
+  }
+  .contact-list a:hover{
+    background: rgba(250,243,236,0.08);
+    border-color: rgba(250,243,236,0.4);
+  }
+  .contact-list a span.arrow{ color: var(--gold); }
+
+  footer{
+    padding: 32px 0;
+    text-align:center;
+    font-size: 0.82rem;
+    color: rgba(42,34,38,0.55);
+  }
+
+  /* ---------- RESPONSIVE ---------- */
+  @media (max-width: 820px){
+    .hero-grid, .about-grid, .contact-box{
+      grid-template-columns: 1fr;
+    }
+    .about-portrait{ order:-1; max-width: 320px; }
+    .services{ grid-template-columns: 1fr; }
+    .books{ grid-template-columns: 1fr; }
+    .portfolio-grid{ grid-template-columns: 1fr 1fr; }
+    nav ul{ display:none; }
+    .contact-box{ padding: 36px 24px; }
+  }
+
+  @media (prefers-reduced-motion: reduce){
+    *{ transition: none !important; scroll-behavior:auto !important; }
+  }
+
+  a:focus-visible, button:focus-visible{
+    outline: 2px solid var(--coral);
+    outline-offset: 3px;
+  }
+</style>
+</head>
+<body>
+
+<nav>
+  <div class="wrap">
+    <div class="brand">
+      <span class="biz-name">Lulu's Dose of Beauty</span>
+      <span class="by-name">by Lutfiya Rawat</span>
+    </div>
+    <ul>
+      <li><a href="#services">Services</a></li>
+      <li><a href="#portfolio">Portfolio</a></li>
+      <li><a href="#books">Books</a></li>
+      <li><a href="#about">About</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+  </div>
+</nav>
+
+<header class="hero">
+  <div class="wrap hero-grid">
+    <div>
+      <span class="label">Skincare · Portraits · Pin-Up Art</span>
+      <h1>Two crafts,<br>one <em>personal</em> touch.</h1>
+      <p class="sub">I offer personalized skincare consultations and custom art commissions — each one shaped around you, not a template.</p>
+      <div class="hero-ctas">
+        <a href="#contact" class="btn btn-primary">Get in touch</a>
+        <a href="#services" class="btn btn-secondary">See what I offer</a>
+      </div>
+    </div>
+    <div class="venn" aria-hidden="true">
+      <div class="blob skin"></div>
+      <div class="blob art"></div>
+      <span class="tag t1">Skincare</span>
+      <span class="tag t2">Art</span>
+      <span class="tag t3">Made for you</span>
+    </div>
+  </div>
+</header>
+
+<section id="services">
+  <div class="wrap">
+    <div class="section-head">
+      <span class="label">What I offer</span>
+      <h2>Two services, one standard: made for you.</h2>
+      <p>Whether it's your skin or your walls, I don't do one-size-fits-all. Every consult and every commission starts with what you actually need.</p>
+    </div>
+    <div class="services">
+      <div class="service-card skin">
+        <div class="icon">🌿</div>
+        <h3>Skincare Consultations</h3>
+        <p>Personalized guidance to help you understand your skin and build a routine that actually works.</p>
+        <ul>
+          <li>Skin type &amp; concern assessment</li>
+          <li>Routine building, step by step</li>
+          <li>Product recommendations for your budget</li>
+          <li>In person, call, or video — whatever suits you</li>
+        </ul>
+        <div class="price">
+          <span class="amount">R350<small>Starting price</small></span>
+          <a class="pay-btn" href="https://pay.yoco.com/lulus-dose-of-beauty?amount=350.00&reference=Skincare+Consultation" target="_blank" rel="noopener">Book &amp; Pay →</a>
+        </div>
+      </div>
+      <div class="service-card art">
+        <div class="icon">🎨</div>
+        <h3>Portrait &amp; Pin-Up Artistry</h3>
+        <p>Crafting vibrant retro pin-up illustrations and custom character work, as well as classic pet and family portraits by commission.</p>
+        <ul>
+          <li>100% digital art</li>
+          <li>Pin-up &amp; custom character illustrations</li>
+          <li>Pet &amp; family portraits</li>
+          <li>Turnaround varies by piece — I'll confirm a timeline upfront</li>
+        </ul>
+        <div class="price">
+          <span class="amount">Custom<small>Quote based on your piece</small></span>
+          <a class="pay-btn" href="https://pay.yoco.com/lulus-dose-of-beauty?reference=Custom+Art+Commission" target="_blank" rel="noopener">Pay Deposit →</a>
+        </div>
+        <p style="margin-top:12px; font-size:0.82rem; color:rgba(42,34,38,0.6);">A 50% deposit secures your booking — the balance is due once your piece is ready.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="portfolio" class="alt">
+  <div class="wrap">
+    <div class="section-head">
+      <span class="label">See my work</span>
+      <h2>Portfolio</h2>
+      <p>A look at recent pin-up and character illustration work. Every piece is fully digital, and every commission is tailored to what you have in mind.</p>
+      <p style="margin-top:8px; font-size:0.84rem; color:rgba(42,34,38,0.55);">Note: pin-up pieces below are stylized illustration with a retro, suggestive aesthetic.</p>
+    </div>
+    <div class="portfolio-grid">
+      <div class="portfolio-item">
+        <img src="images/art-1.jpg" alt="Pin-up style digital illustration, close-up portrait">
+        <div class="overlay"><span>Digital illustration</span></div>
+      </div>
+      <div class="portfolio-item">
+        <img src="images/art-2.jpg" alt="Pin-up style digital illustration, monochrome with red accent">
+        <div class="overlay"><span>Digital illustration</span></div>
+      </div>
+      <div class="portfolio-item">
+        <img src="images/art-3.jpg" alt="Pin-up style digital illustration, vector style">
+        <div class="overlay"><span>Digital illustration</span></div>
+      </div>
+    </div>
+    <p class="portfolio-note">Want something in a different style — a pet portrait, a family piece, or your own character concept? Reach out and let's talk about your vision.</p>
+  </div>
+</section>
+
+<section id="books">
+  <div class="wrap">
+    <div class="section-head">
+      <span class="label">Also, I write</span>
+      <h2>My books</h2>
+      <p>When I'm not consulting or painting, I'm usually writing. Here's what I've published so far.</p>
+    </div>
+    <div class="books">
+      <div class="book-card">
+        <div class="book-cover" style="background-image:url('images/book-1-in-loving-memory.jpg'); background-size:cover; background-position:center;"></div>
+        <div class="book-body">
+          <h3>In Loving Memory of My Mother</h3>
+          <p>A daughter's tribute to her mother — written from the heart, for anyone who's loved someone deeply enough to want their memory to live on. A story of warmth, strength, and a woman who touched everyone she met.</p>
+          <a class="book-buy" href="https://www.amazon.com/Loving-Memory-My-Mother-touched-ebook/dp/B0C7H1RN2C" target="_blank" rel="noopener">Buy on Amazon →</a>
+        </div>
+      </div>
+      <div class="book-card">
+        <div class="book-cover" style="background-image:url('images/book-2-serendipitys-song.jpg'); background-size:cover; background-position:center;"></div>
+        <div class="book-body">
+          <h3>Serendipity's Song</h3>
+          <p>Sometimes love finds you in the most unexpected moments. Serendipity's Song is a tender story about friendship, timing, and the quiet magic of chance encounters.</p>
+          <a class="book-buy" href="https://www.amazon.com/Serendipitys-Song-Friendship-Symphony-Serendipity-ebook/dp/B0CTPBVSJW" target="_blank" rel="noopener">Buy on Amazon →</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="about">
+  <div class="wrap about-grid">
+    <div class="about-portrait" role="img" aria-label="Portrait of Lutfiya Rawat" style="background-image:url('images/lutfiya-portrait.jpg'); background-size:cover; background-position:center top;"></div>
+    <div class="about-text">
+      <span class="label">About me</span>
+      <h2 style="margin: 10px 0 22px;">Hi, I'm Lutfiya.</h2>
+      <p>I split my time between a few things I genuinely love: skincare, art, and writing. Good skincare shouldn't feel complicated or overwhelming — it should be personal, practical, and built around your skin, not a generic routine pulled off the internet.</p>
+      <p>On the creative side, custom commissions let me bring someone else's vision to life — whether that's a special portrait, a gift for someone, or a piece that's simply, completely yours. I'm also an author, with a couple of books out that mean a lot to me (you can find them below).</p>
+      <p>When I'm not consulting or working on a commission, you'll usually find me relaxing with a tile game and a cup of something warm. I'd love to help with your skin, your walls, or both — reach out and let's chat.</p>
+    </div>
+  </div>
+</section>
+
+<section id="contact">
+  <div class="wrap">
+    <div class="contact-box">
+      <div>
+        <span class="label">Get in touch</span>
+        <h2>Let's talk about<br>what you need.</h2>
+        <p>Tell me what you're looking for and I'll reply within 24 hours.</p>
+      </div>
+      <ul class="contact-list">
+        <li><a href="https://wa.me/27815205332" target="_blank" rel="noopener">WhatsApp me <span class="arrow">→</span></a></li>
+        <li><a href="https://tiktok.com/@lutfiyarawat" target="_blank" rel="noopener">Message on TikTok <span class="arrow">→</span></a></li>
+        <li><a href="mailto:rawat.lutfiya@gmail.com">Email me <span class="arrow">→</span></a></li>
+        <li><a href="https://pay.yoco.com/lulus-dose-of-beauty" target="_blank" rel="noopener">Pay via Yoco <span class="arrow">→</span></a></li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<footer>
+  © 2026 Lulu's Dose of Beauty — Lutfiya Rawat
+</footer>
+
+</body>
+</html>
